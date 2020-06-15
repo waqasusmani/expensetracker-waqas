@@ -1,9 +1,20 @@
+.body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -13,26 +24,137 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.App-header {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  border-bottom: 2px solid gold;
+}
+
+.Heading {
+  color: #61dafb;
+  margin-left: 1rem;  
+}
+
+.Balance {
+  display: flex;
+  border: 2px solid gold;
+  margin-top: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.Balance h3 {
+  color: #61dafb;
+  margin: 10px;
+}
+
+.Transaction {
+  margin-top: 5vh;
+  border: 2px solid gold;
+}
+
+.Transaction h2 {
+  color: #61dafb;
+}
+
+.Transaction input {
+  margin: 10px;
+}
+
+.amount {
+  padding-left: 2.4rem;
+  text-align: left;
+}
+
+.type {
+  padding-left: 2.4rem;
+  text-align: left;
+}
+
+#amount {
+  width: 15.5rem;
+}
+
+#inflow {
+  margin-left: 5vw;
+  background-color: #61dafb;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border-style: hidden;
+  height: 2rem;
+  width:6rem;
+}
+
+#outflow {
+  background-color: #61dafb;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border-style: hidden;
+  height: 2rem;
+  width:6rem;
+}
+
+.Account {
+  border: 2px solid gold;
+  margin-top: 5vh;
+}
+
+.Account h2 {
+  color: #61dafb;
+}
+
+.Account input {
+  margin: 1vw;
+}
+
+
+
+@media (max-width:768px) {
+  .Transaction, .amount, .type, .Account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #inflow, #outflow, #amount, .amount, .type {
+    margin-left: 0vw;
+    margin-right: 0vw;
+    padding-left: 0rem;
+  }
+
+  .App-logo {
+    height: 5vmin;
+  }
+  
+
+}
+
+
+@media (max-width:619px) {
+  .Heading {
+    font-size: large;
+  }
+}
+
+@media (max-width:349px) {
+  .Heading {
+    font-size: small;
+  }
+
+  #amount {
+    width: 10rem;
   }
 }
