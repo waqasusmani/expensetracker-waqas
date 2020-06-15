@@ -34,7 +34,7 @@ jobs:
       run: yarn install
       
     - name: Making Production Build
-      run: yarn build
+      run: CI=false yarn build
     
     - name: Install Surge
       run: npm install -g surge
