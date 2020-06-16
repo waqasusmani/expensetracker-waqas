@@ -58,6 +58,64 @@
   margin: 10px;
 }
 
+.Account {
+  border: 2px solid gold;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.Account h2 {
+  color: #61dafb;
+}
+
+.Account input {
+  width: 12vw;
+  margin: 1vw;
+}
+
+.Transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#transToShow {
+  margin-bottom: 5vh;
+}
+
+#transToShow tr td {
+  text-align: justify;
+  border: 1px dotted gold;
+  padding: 1vh 1vw 1vh 0.5vw;
+}
+
+.newTransactionsToShow{
+  animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: #61dafb;    }
+  49%{    color: #61dafb; }
+  60%{    color: transparent; }
+  99%{    color:transparent;  }
+  100%{   color: #61dafb;    }
+}
+
+.noTransactions {
+  color: red;
+  animation-name: noTransactionsAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+}
+@keyframes noTransactionsAnimation {
+  0%{color:red;}
+  25%{color: transparent;}
+  50%{color: red;}
+  75%{color: transparent;}
+  100%{color:red;}
+}
+
+
 .Transaction {
   margin-top: 5vh;
   border: 2px solid gold;
@@ -81,12 +139,20 @@
   text-align: left;
 }
 
+.type p {
+  display: inline;
+}
+
+#particulars {
+  width: 15.5rem;
+}
+
 #amount {
   width: 15.5rem;
 }
 
 #inflow {
-  margin-left: 5vw;
+  margin-left: 6vw;
   background-color: #61dafb;
   color: white;
   font-size: large;
@@ -106,21 +172,6 @@
   width:6rem;
 }
 
-.Account {
-  border: 2px solid gold;
-  margin-top: 5vh;
-}
-
-.Account h2 {
-  color: #61dafb;
-}
-
-.Account input {
-  margin: 1vw;
-}
-
-
-
 @media (max-width:768px) {
   .Transaction, .amount, .type, .Account {
     display: flex;
@@ -139,6 +190,9 @@
     height: 5vmin;
   }
   
+  .Account input {
+    width: auto;
+  }
 
 }
 
@@ -156,5 +210,9 @@
 
   #amount {
     width: 10rem;
+  }
+  .type p {
+    font-size: small;
+    margin-left: 10vw;
   }
 }

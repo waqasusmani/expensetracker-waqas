@@ -7,7 +7,7 @@ function Balance() {
     return (
         <div className="Balance">
             <Inflow />
-            <Outflow totaloutflow={99000}/>    
+            <Outflow />    
         </div>
     )
 }
@@ -16,10 +16,9 @@ function Inflow() {
     var totalInflows=0;
     for (var i=0;i<allTransactions.length;i++){
         if (allTransactions[i].inflow) {
-            totalInflows+=parseFloat(allTransactions[i]["inflow"]);
+            totalInflows+=parseFloat(allTransactions[i]["inflow"][1]);
         }
     }
-    
     console.log("totalInflows: "+totalInflows);
     return (
         <div className="Total-inflow">
@@ -33,7 +32,7 @@ function Outflow() {
     var totalOutflows=0;
     for (var i=0;i<allTransactions.length;i++){
         if (allTransactions[i].outflow) {
-            totalOutflows+=parseFloat(allTransactions[i]["outflow"]);
+            totalOutflows+=parseFloat(allTransactions[i]["outflow"][1]);
         }
     }
     console.log("totalOutflows: "+totalOutflows);
