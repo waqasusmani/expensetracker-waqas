@@ -2,7 +2,7 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.App {
+.dark {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,28 @@
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.light {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.bluesky {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: skyblue;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: black;
 }
 
 .App-logo {
@@ -38,11 +60,61 @@
   justify-content:space-around;
   align-items: center;
   border-bottom: 2px solid gold;
-}
+  }
 
 .Heading {
   color: #61dafb;
   margin-left: 1rem;  
+}
+
+.Heading-Blue {
+  color: whitesmoke;
+  margin-left: 1rem;  
+}
+
+.ThemeSelector{
+  margin-top: 2vh;
+  color: gold;
+  cursor: pointer;
+}
+
+.ThemeSelector:hover .Theme {
+  display:block;
+}
+
+.Theme {
+  display: none;
+  margin-top: 1vh;
+}
+
+.ThemeButton-dark {
+  border: none;
+  margin: 1vh;
+  height: 20px;
+  width: 4rem;
+  background-color: black;
+  color: gold;
+  cursor: pointer;
+}
+
+.ThemeButton-light {
+  border: none;
+  margin: 1vh;
+  height: 20px;
+  width: 4rem;
+  background-color: whitesmoke;
+  color: black;
+  cursor: pointer;
+}
+
+.ThemeButton-bluesky {
+  border: none;
+  margin: 1vh;
+  height: 20px;
+  width: 4rem;
+  background-color: skyblue;
+  color:white;
+  cursor: pointer;
 }
 
 .Balance {
@@ -53,8 +125,13 @@
   justify-content: center;
 }
 
-.Balance h3 {
+.Balance-heading-normal {
   color: #61dafb;
+  margin: 10px;
+}
+
+.Balance-heading-blue {
+  color: whitesmoke;
   margin: 10px;
 }
 
@@ -64,8 +141,12 @@
   text-align: center;
 }
 
-.Account h2 {
+.Account-heading-normal {
   color: #61dafb;
+}
+
+.Account-heading-blue {
+  color: whitesmoke;
 }
 
 .Account input {
@@ -121,8 +202,12 @@
   border: 2px solid gold;
 }
 
-.Transaction h2 {
+.Transaction-heading-normal {
   color: #61dafb;
+}
+
+.Transaction-heading-blue {
+  color: whitesmoke;
 }
 
 .Transaction input {

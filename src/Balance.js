@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import allTransactions from './AllTransactions';
+import themeContext from './themeContext';
+
 
 
 
 function Balance() {
+       
     return (
         <div className="Balance">
             <Inflow />
@@ -13,6 +16,8 @@ function Balance() {
 }
 
 function Inflow() {
+    var theme = useContext(themeContext);
+    console.log(theme);
     var totalInflows=0;
     for (var i=0;i<allTransactions.length;i++){
         if (allTransactions[i].inflow) {
@@ -22,13 +27,14 @@ function Inflow() {
     console.log("totalInflows: "+totalInflows);
     return (
         <div className="Total-inflow">
-            <h3>Total inflow</h3>
+            <h3 className={theme=='bluesky'?'Balance-heading-blue':'Balance-heading-normal'}>Total inflow</h3>
             <p>$ {totalInflows}</p>
         </div>
     )
 }
 
 function Outflow() {
+    var theme = useContext(themeContext);
     var totalOutflows=0;
     for (var i=0;i<allTransactions.length;i++){
         if (allTransactions[i].outflow) {
@@ -38,7 +44,7 @@ function Outflow() {
     console.log("totalOutflows: "+totalOutflows);
     return (
         <div className="Total-outflow">
-            <h3>Total outflow</h3>
+            <h3 className={theme=='bluesky'?'Balance-heading-blue':'Balance-heading-normal'}>Total outflow</h3>
             <p>$ {totalOutflows}</p>
         </div>
     )

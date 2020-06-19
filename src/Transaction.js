@@ -1,12 +1,15 @@
 import React, {useContext} from 'react';
 import allTransactions from './AllTransactions';
 import transactionsContext from './transactionsContext';
+import themeContext from './themeContext';
 
 
 
 function Transaction() {
 
     var transactions = useContext(transactionsContext);
+
+    var theme = useContext(themeContext);
 
     function recordInflow(){
         if (!isNaN(parseFloat(document.getElementById("amount").value))){
@@ -32,7 +35,7 @@ function Transaction() {
 
    return (
         <div className="Transaction">
-            <h2>Enter new transaction here:</h2>
+            <h2 className={theme=='bluesky'?'Transaction-heading-blue':'Transaction-heading-normal'}>Enter new transaction here:</h2>
             <div className="amount">
                 <label htmlFor="particulars">Particulars: </label> 
                 <input type="text" name="particulars" id="particulars"/>

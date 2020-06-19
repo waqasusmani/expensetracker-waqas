@@ -1,9 +1,13 @@
 import React, { useState, useContext } from 'react';
 import allTransactions from './AllTransactions';
 import transactionsContext from './transactionsContext';
+import themeContext from './themeContext';
 
 
 function Account() {
+    
+    var theme = useContext(themeContext);
+
     var [newTransactions,newTransactionsUpdater] = useState(0)
     var [newReversedLength,newReversedLengthUpdater] = useState(0)
     var trnsState = useContext(transactionsContext);
@@ -69,7 +73,7 @@ function Account() {
 
     return (
         <div className="Account" id="Account">
-            <h2>My Account</h2>
+            <h2 className = {theme=='bluesky'?'Account-heading-blue':'Account-heading-normal'}>My Account</h2>
             <input type="button" value="Last 5 transactions" onClick={()=>showTransactions(5)}/>
             <input type="button" value="Last 10 transations" onClick={()=>showTransactions(10)}/>
             <input type="button" value="All transactions" onClick={()=>showTransactions("all")}/>
